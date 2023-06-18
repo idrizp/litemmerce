@@ -38,12 +38,19 @@ export default async function Page({ params }: { params: { id: string } }) {
   try {
     const item = await getShoppingItem(params.id);
     return (
-      <main className="p-6 tracking-tighter space-y-5">
-        <p className="text-5xl font-black pt-5">{item.name}</p>
-        <Gallery images={item.images} />
-        <p className="text-xl text-blue-400">Price: ${item.price}</p>
-        <p className="text-white/75 max-w-xl text-lg">{item.description}</p>
-        <AddToCart url={item.purchaseUrl} />
+      <main className="p-6 tracking-tighter flex flex-col items-center">
+        <div className="space-y-5">
+          <p className="text-5xl font-black py-5 text-center">{item.name}</p>
+          <Gallery images={item.images} />
+          <p className="text-xl text-blue-400">Price: ${item.price}</p>
+          <p className="text-white/75 max-w-xl text-lg">{item.description}</p>
+          <div className="space-x-2 flex flex-row items-center">
+            <Link href={"/"}>
+              <Button type="secondary">Back to Shop</Button>
+            </Link>
+            <AddToCart url={item.purchaseUrl} />
+          </div>
+        </div>
       </main>
     );
   } catch (err) {
