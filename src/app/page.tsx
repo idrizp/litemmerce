@@ -5,7 +5,7 @@ import { useServerSupabase } from "./lib/server/supabase-server";
 import { Database } from "./lib/supabase.types";
 import { getImagesFromItem } from "./lib/server/item-handler";
 
-export async function listShoppingItems(): Promise<ItemProps[]> {
+async function listShoppingItems(): Promise<ItemProps[]> {
   const supabase = useServerSupabase();
   const res = await supabase.from("items").select("*, images");
   if (res.error) {
