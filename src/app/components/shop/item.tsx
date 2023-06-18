@@ -13,7 +13,7 @@ export type ItemProps = {
 };
 export const Item = ({ id, name, description, price, images }: ItemProps) => {
   return (
-    <Card className="max-w-lg md:max-w-max">
+    <Card className="max-w-lg md:max-w-none z-10">
       <CardTitle>{name}</CardTitle>
       <Gallery images={images} />
       <CardText className="text-white/70">${price}</CardText>
