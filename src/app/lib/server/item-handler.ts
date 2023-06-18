@@ -1,3 +1,5 @@
+import "server-only";
+
 import { Item } from "./stripe-handler";
 import { useServerSupabase } from "./supabase-server";
 

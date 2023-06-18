@@ -1,9 +1,12 @@
+import "server-only";
+
 import { Database } from "../supabase.types";
 import Stripe from "stripe";
 import { useServerSupabase } from "./supabase-server";
 import { getImagesFromItem } from "./item-handler";
 
 export type Item = Database["public"]["Tables"]["items"]["Row"];
+
 export const stripeServer = new Stripe(
   process.env.STRIPE_SECRET_KEY as string,
   {

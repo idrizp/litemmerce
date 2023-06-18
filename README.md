@@ -1,5 +1,7 @@
 # Litemmerce:
 
+[The project is deployed on Vercel.](https://litemmerce.vercel.app/)
+
 Litemmerce is a small e-commerce platform built using Supabase and Stripe.
 It uses supabase storage alongside the supabase database, and stripe to manage payments.
 
