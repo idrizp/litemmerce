@@ -16,7 +16,7 @@ async function listShoppingItems(): Promise<ItemProps[]> {
     name: item.title,
     description: item.description,
     price: item.price,
-    images: item.images ? getImagesFromItem(item) : [],
+    images: getImagesFromItem(item),
   }));
 }
 
